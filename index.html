@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List - Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Task Manager</h1>
+            <div style="display: flex; align-items: center;">
+                <div class="date-display" id="dateDisplay"></div>
+                <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" title="Toggle Dark Mode">
+                    🌙
+                </button>
+            </div>
+        </div>
+
+        <div class="board">
+            <div class="column">
+                <div class="column-header">
+                    <h3 class="column-title">📝 To Do</h3>
+                    <span class="task-count" id="todoCount">0</span>
+                </div>
+                
+                <button class="add-task-btn" onclick="toggleAddTask('todo')">+ Add new task</button>
+                
+                <div class="input-group" id="todoInput">
+                    <input type="text" class="task-input" placeholder="Enter task description..." id="todoText">
+                    <select class="priority-select" id="todoPriority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="addTask('todo')">Add Task</button>
+                        <button class="btn btn-secondary" onclick="cancelAddTask('todo')">Cancel</button>
+                    </div>
+                </div>
+                
+                <div id="todoTasks"></div>
+            </div>
+
+            <div class="column">
+                <div class="column-header">
+                    <h3 class="column-title">⏳ In Progress</h3>
+                    <span class="task-count" id="progressCount">0</span>
+                </div>
+                
+                <button class="add-task-btn" onclick="toggleAddTask('progress')">+ Add new task</button>
+                
+                <div class="input-group" id="progressInput">
+                    <input type="text" class="task-input" placeholder="Enter task description..." id="progressText">
+                    <select class="priority-select" id="progressPriority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="addTask('progress')">Add Task</button>
+                        <button class="btn btn-secondary" onclick="cancelAddTask('progress')">Cancel</button>
+                    </div>
+                </div>
+                
+                <div id="progressTasks"></div>
+            </div>
+
+            <div class="column">
+                <div class="column-header">
+                    <h3 class="column-title">✅ Done</h3>
+                    <span class="task-count" id="doneCount">0</span>
+                </div>
+                
+                <button class="add-task-btn" onclick="toggleAddTask('done')">+ Add new task</button>
+                
+                <div class="input-group" id="doneInput">
+                    <input type="text" class="task-input" placeholder="Enter task description..." id="doneText">
+                    <select class="priority-select" id="donePriority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="addTask('done')">Add Task</button>
+                        <button class="btn btn-secondary" onclick="cancelAddTask('done')">Cancel</button>
+                    </div>
+                </div>
+                
+                <div id="doneTasks"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
